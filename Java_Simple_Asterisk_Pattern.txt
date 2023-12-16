@@ -5,14 +5,12 @@ Y
  |  Plane(x,y) <--pattern print 
  |
  |
---------------	X
+<---------------> X
  |
 
-     (j) 1  2   3
-(i) 1 | * | * | * |             
-      --------------  
+   (j)  1   2   3
+(i)1  | * | * | * |             
    2  | * | * | * |  
-      -------------
    3  | * | * | * |
  
 
@@ -35,11 +33,9 @@ eg:
   2. print the hollow rectangle using "*". 
 
         1   2   3
-   1  | * | * | * |             
-      -------------  
-   2  | * |   | * |  
-      -------------
-   3  | * | * | * |
+   1    *   *   *               
+   2    *       *    
+   3    *   *   *  
 
     
     class Pattern {
@@ -63,13 +59,11 @@ eg:
      
   3. print tht half right side of pyramid using "*".
       
-        1   2   3
-   1  | * |   |   |             
-      -------------  
-   2  | * | * |   |  
-      --------------
-   3  | * | * | * |
-     
+       1    2   3
+   1   | * |   |   |         
+   2   | * | * |   |
+   3   | * | * | * | 
+      
      class Pattern {
         public static void main(String[] args) {
        
@@ -86,10 +80,8 @@ eg:
   4. inverted half right side of pyramid using "*".
         
         1   2   3
-   1  | * | * | * |             
-      -------------  
-   2  | * | * |   |  
-      -------------
+   1  | * | * | * |          
+   2  | * | * |   |
    3  | * |   |   |
       
       
@@ -111,11 +103,9 @@ eg:
    5. print the left half side of pyramid using "*".  
 
          1   2   3
-    1  |   |   | * |             
-       ------------- 
-    2  |   | * | * |  
-       -------------
-    3  | * | * | * |
+    1   |   |   | * |             
+    2   |   | * | * |  
+    3   | * | * | * |
 
      public class Pattern{
         public static void main(String args[]){
@@ -137,10 +127,8 @@ eg:
    6. print the right half side of pyramid using number.
 
         1   2   3
-   1  | 1 |   |   |             
-      -------------  
-   2  | 1 | 2 |   |  
-      -------------
+   1  | 1 |   |   | 
+   2  | 1 | 2 |   |
    3  | 1 | 2 | 3 |
 
     class Pattern{
@@ -162,10 +150,8 @@ eg:
    7. print the inverted right half side of pyramid using number. 
    
         1   2   3
-   1  | 1 | 2 | 3 |             
-      -------------  
-   2  | 1 | 2 |   |  
-      -------------
+   1  | 1 | 2 | 3 |            
+   2  | 1 | 2 |   |
    3  | 1 |   |   |
      
     class Pattern{
@@ -187,11 +173,8 @@ eg:
     
         1   2   3   4
    1  | 1 |   |   |   |          
-      -----------------  
    2  | 2 | 3 |   |   |
-      -----------------
    3  | 4 | 5 | 6 |   |
-      -----------------
    4  | 7 | 8 | 9 |10 |  
 
     class Pattern {
@@ -213,13 +196,10 @@ eg:
    
   9. print the 0-1 or binary right angle-triangle.
 
-      j 1   2   3   4     
-  i 1 | 1 |   |   |   |      -basically,       
-      -----------------                 even sum of (i+j) = "1" --print
-   2  | 0 | 1 |   |   |                 odd  sum of (i+j) = "0" --print 
-      -----------------
+   (j)  1   2   3   4     
+(i)1  | 1 |   |   |   |      -basically,  even sum of (i+j) = "1" --print.
+   2  | 0 | 1 |   |   |                 odd  sum of (i+j) = "0" --print. 
    3  | 1 | 0 | 1 |   |
-      -----------------
    4  | 0 | 1 | 0 | 1 | 
 
    
