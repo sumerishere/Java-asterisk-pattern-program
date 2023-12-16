@@ -1,0 +1,374 @@
+---9 best pattern in java---
+
+Y
+ |
+ |  Plane(x,y) <--pattern print 
+ |
+ |
+--------------	X
+ |
+
+     (j) 1  2   3
+(i) 1 | * | * | * |             
+      --------------  
+   2  | * | * | * |  
+      -------------
+   3  | * | * | * |
+ 
+
+eg:
+ 
+  1. print the solid rectangle using "*". 
+   
+    class Pattern {
+       public static void main(String[] args) {
+        
+          for (int i=1;i<=4;i++){       //outer loop--
+             for (int j=1;j<=5;j++){        //inner loop--
+                  System.out.print("*");
+             }
+          System.out.println(" ");
+          }
+       }
+    }
+
+  2. print the hollow rectangle using "*". 
+
+        1   2   3
+   1  | * | * | * |             
+      -------------  
+   2  | * |   | * |  
+      -------------
+   3  | * | * | * |
+
+    
+    class Pattern {
+       public static void main(String[] args) {
+        
+          int n=4;
+          int m=5;
+          for (int i =1;i<=n;i++){
+             for (int j =1;j<=m;j++){
+                 if (i==1 || j==1 || i==n || j==m){
+                      System.out.print("*");
+                 }else{
+                      System.out.print(" ");
+                 }
+              }
+              System.out.println();
+           }
+        }
+      }
+     
+     
+  3. print tht half right side of pyramid using "*".
+      
+        1   2   3
+   1  | * |   |   |             
+      -------------  
+   2  | * | * |   |  
+      --------------
+   3  | * | * | * |
+     
+     class Pattern {
+        public static void main(String[] args) {
+       
+           int n = 6;
+          
+           for (int i=1; i<=n; i++){
+             for (int j=1; j<=i; j++){
+                 System.out.print("*");
+             }
+             System.out.println("");
+           }
+      } 
+          
+  4. inverted half right side of pyramid using "*".
+        
+        1   2   3
+   1  | * | * | * |             
+      -------------  
+   2  | * | * |   |  
+      -------------
+   3  | * |   |   |
+      
+      
+    class Pattern {
+       public static void main(String[] args) {
+
+          int n=6;    //n=1,2,3,4,5.....n
+        
+          for (int i=n; i>=1; i--){
+             for (int j=1; j<=i; j++){
+                 System.out.print("*");
+             }
+             System.out.println("");
+          }
+        }
+     }
+
+    
+   5. print the left half side of pyramid using "*".  
+
+         1   2   3
+    1  |   |   | * |             
+       ------------- 
+    2  |   | * | * |  
+       -------------
+    3  | * | * | * |
+
+     public class Pattern{
+        public static void main(String args[]){
+          
+          int n=6;
+          for (int i=1; i<=n; i++){        //outer loop
+             for (int j=1; j<=n-1; j++){      //inner loop-1
+                System.out.print(" ");
+             } 
+             for (int j=1; j<=i; j++){        //inner loop-2
+                System.out.print("*");
+             }
+             System.out.print(" ");
+           }
+        }
+      }
+  
+     
+   6. print the right half side of pyramid using number.
+
+        1   2   3
+   1  | 1 |   |   |             
+      -------------  
+   2  | 1 | 2 |   |  
+      -------------
+   3  | 1 | 2 | 3 |
+
+    class Pattern{
+        public satic void main(String[] args){
+             
+            int n;
+
+            for (int i=1; i<=n; i++){     //outer loop
+                for (int j=1;j<=i;j++){    //inner loop
+                    System.out.print(j+" ");
+                }
+                System.out.println();
+            }
+        }
+
+    }
+
+     
+   7. print the inverted right half side of pyramid using number. 
+   
+        1   2   3
+   1  | 1 | 2 | 3 |             
+      -------------  
+   2  | 1 | 2 |   |  
+      -------------
+   3  | 1 |   |   |
+     
+    class Pattern{
+        public satic void main(String[] args){
+             
+            int n = 6;
+
+            for (int i=n;i>=1;i--){            //outer loop
+                for (int j=1; j<=n-i+1; j++){       //inner loop
+                    System.out.print(j+" "); 
+                }
+                System.out.println();
+            }
+        }
+
+    }
+
+   8. --floyd's triangle--
+    
+        1   2   3   4
+   1  | 1 |   |   |   |          
+      -----------------  
+   2  | 2 | 3 |   |   |
+      -----------------
+   3  | 4 | 5 | 6 |   |
+      -----------------
+   4  | 7 | 8 | 9 |10 |  
+
+    class Pattern {
+       public static void main(String[] args) {
+           
+           int n = 4;
+           int num = 1;
+           
+           for(int i=1;i<=n;i++){
+               for (int j=1;j<=i;j++){
+                   System.out.print(num+" ");
+                   num++;
+               }
+               System.out.println(" ");
+           }
+        }
+      }
+
+   
+  9. print the 0-1 or binary right angle-triangle.
+
+      j 1   2   3   4     
+  i 1 | 1 |   |   |   |      -basically,       
+      -----------------                 even sum of (i+j) = "1" --print
+   2  | 0 | 1 |   |   |                 odd  sum of (i+j) = "0" --print 
+      -----------------
+   3  | 1 | 0 | 1 |   |
+      -----------------
+   4  | 0 | 1 | 0 | 1 | 
+
+   
+   class Pattern {
+       public static void main(String[] args) {
+           
+           int n = 6;
+           
+           for(int i=1;i<=n;i++){        //outer loop
+               for (int j=1;j<=i;j++){       //inner loop
+                   if ((i+j)%2==0){
+                       System.out.print("1"+" ");
+                   }else{
+                       System.out.print("0"+" ");
+                   }
+               }
+               System.out.println(" ");
+           }
+        }
+      }
+    
+
+10. print the aesterisk type pattern.
+ 
+               *     *
+                *   * 
+                 * *  
+            * * * * * * * 
+                 * *  
+                *   * 
+               *     *
+
+
+ public class Patternn{
+    public static void main(String[] args){
+           
+        int n = 8;
+        
+        for (int i=0;i<=n;i++){    //outer loop of upper part
+            for (int j=0;j<=n;j++){   //inner loop of upper part
+                if(i==j || i+j==n || i==n/2 ){
+                    System.out.print("*");
+                }else{
+                    System.out.print(" ");
+                }    
+            }
+            System.out.println();
+        }
+    }
+ } 
+
+11. print the X type aestrisks.
+        
+               *     *
+                *   * 
+                 * *  
+                  * 
+                 * *  
+                *   * 
+               *     *
+
+  public class HelloWorld {
+    public static void main(String[] args) {
+        int n=8;
+        
+        for (int i=0;i<=n;i++){
+            for(int j=0;j<=n;j++){
+                if (i==j || i+j==n){
+                    System.out.print("*");
+                }else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+        
+    }
+  }
+
+12. print alphabetical right angle triangle.
+
+            A
+            A B
+            A B C
+            A B C D
+            A B C D E
+
+  public class AlphabetTriangle {
+    public static void main(String[] args) {
+        int n = 5; // Number of rows
+        
+        for (int i = 1; i <= n; i++) {
+            char c = 'A'; // Start with capital 'A'
+            
+            // Print spaces
+            for (int j = n - i; j >= 1; j--) {
+                System.out.print(" ");        //-->for line no.[i+" "]
+            }
+            
+            // Print characters
+            for (int k = 1; k <= i; k++) {
+                System.out.print(c+" ");
+                c++; // Move to the next character
+            }
+            
+            System.out.println(); // Move to the next line
+        }
+    }
+ }
+
+
+13. print the hollow pyramid pattern.
+
+            0   
+           1 1  
+          2   2 
+         3 3 3 3
+
+  public class MyClass {
+     public static void main(String args[]) {
+        
+        // int n=6;
+        
+        for (int i=0;i<=3;i++){
+            char c = 'A';
+            // for (int k=1;k<=n-i;k++){
+            //     System.out.print(" ");
+            // }
+            for (int j=0;j<=6;j++){
+                if (i+j==3 || j-i==3 || (i==3 && j%2==0)){
+                    System.out.print(i);
+                }else{
+                     System.out.print(" ");
+                }   
+            }
+            System.out.println();
+        }
+     }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
